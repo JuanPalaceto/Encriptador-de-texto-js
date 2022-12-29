@@ -1,0 +1,440 @@
+body {
+    background: linear-gradient(#F3F5FC, #c3c8dd, #818aaa);
+    /* Para ocultar las barras de navegación y que el background abarque toda la pantalla visible */
+    height: 100vh;
+    /* overflow-y: hidden; */
+    font-family: 'Inter', sans-serif;
+    width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.caja {
+    display: inline-block;
+    position: absolute;
+    width: 680px;
+    top: 128px;
+    bottom: 40px;
+    right: 480px;
+    left: 200px;
+    padding: 40px;
+    /* Esto era para probar las dimensiones :p */
+    /* border: 1px solid black; */
+}
+
+.caja-texto {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 80%;
+    font-family: 'Inter', sans-serif;
+    font-size: 2em;
+    line-height: 150%;
+    color: #0A3871;
+    background: transparent;
+}
+
+.caja-texto::placeholder {
+    color: #0A3871;
+    /* opacity: 1; */
+  }
+
+.warning {
+    display: block;
+    position: absolute;
+    bottom: 125px;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+}
+
+.warning img {
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.boton-encriptar {
+    width: 328px;
+    height: 67px;
+    color: white;
+    padding: 24px;
+    background: #0A3871;
+    border:1px solid #0A3871;
+    border-radius: 24px;
+    line-height: 19px;
+    font-size: 1em;
+    position: absolute;
+    bottom: 40px;
+}
+
+.boton-encriptar:hover {
+    background: #031d3d;
+}
+
+.boton-encriptar:active {
+    background: #031d3d;
+}
+
+.boton-encriptar::after{
+    content: " 🔒";
+}
+
+.boton-desencriptar {
+    width: 328px;
+    height: 67px;
+    color: #0A3871;
+    padding: 24px;
+    background: transparent;
+    border:1px solid #0A3871;
+    border-radius: 24px;
+    line-height: 19px;
+    font-size: 1em;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+
+.boton-desencriptar:hover {
+    background: #D8DFE8;
+}
+
+.boton-desencriptar:active {
+    background: #D8DFE8;
+}
+
+.boton-desencriptar::after {
+    content: " 🔓";
+}
+
+.mensaje {
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    bottom: 40px;
+    width: 400px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
+
+.resultado {
+    width: 336px;
+    font-size: 1.5em;
+    line-height: 150%;
+    color: #495057;
+    position: absolute;
+    top: 32px;
+    /* Esto sirve para centrar horizontal el div */
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* Esto es para que no se salga la palabra del contenedor si es demasiaaaaado larga */
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+.contenido-mensaje {
+    position: absolute;
+    width: 336px;
+    /* Esto sirve para centrar horizontal y verticalmente el div completo (imagen y texto)s */
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.persona {
+    width: 100%;
+}
+
+.mensaje > div > img + p {
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 120%;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.mensaje > div > img + p + p {
+    font-size: 1em;
+    line-height: 150%;
+    text-align: center;
+}
+
+.boton-copiar {
+    display: none;
+    width: 336px;
+    height: 67px;
+    color: #0A3871;
+    padding: 24px;
+    background: transparent;
+    border:1px solid #0A3871;
+    border-radius: 24px;
+    line-height: 19px;
+    font-size: 1em;
+    position: absolute;
+    bottom: 40px;
+    /* Para centrar el texto */
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.boton-copiar:hover {
+    background: #D8DFE8;
+}
+
+.boton-copiar:active {
+    background: #D8DFE8;
+}
+
+.boton-copiar::after {
+    content: " ⧉";
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    font-style: italic;
+    /* Para centrar el texto */
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+footer span {
+    font-style: normal;
+    font-weight: bold;
+}
+
+footer a img {
+    height: 1rem;
+    vertical-align: bottom;
+    margin: 0 5px;
+}
+
+@media screen and (max-height:900px) {
+    .caja-texto {
+        height: 60%;
+    }
+
+    .resultado {
+        max-height: 60%;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width:768px) {
+    body {
+        width: 768px;
+        margin: 0;
+        overflow-y: auto;
+        height: 100vh;
+    }
+
+    .logo {
+        top: 74px;
+        left: 0;
+    }
+
+    .caja {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        top: 240px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 0px;
+    }
+
+    .caja-texto {
+        padding: 0 40px;
+        box-sizing: border-box;
+        height: 565px;
+    }
+
+    .warning {
+        display: block;
+        top: 600px;
+        padding: 0 40px;
+        box-sizing: border-box;
+
+    }
+
+    section.caja button {
+        top: 631px;
+    }
+
+    .boton-encriptar {
+        left: 40px;
+        bottom: 0;
+    }
+
+    .mensaje {
+        display: block;
+        position: relative;
+        width: calc(100% - 80px);
+        min-height: 133px;
+        top: 420px;
+        left: 40px;
+        padding: 0px;
+    }
+
+    .contenido-mensaje {
+        width: 100%;
+        padding: 16px 32px 32px;
+    }
+
+    .persona {
+        display: none;
+    }
+
+    .resultado {
+        position: relative;
+        width: calc(100% - 64px);
+        left: 0;
+        top: 0;
+        right: 0;
+        padding: 32px;
+        transform: none;
+    }
+
+    .boton-copiar {
+        position: relative;
+        bottom: 32px;
+        width: calc(100% - 64px);
+        margin-top: 32px;
+        /* Para centrar el texto */
+        left: 32px;
+        transform: none;
+    }
+
+    footer {
+        text-align: center;
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        top: 100%;
+        left: 0;
+        transform: translateY(100%);
+    }
+}
+
+/* movil */
+@media screen and (max-width:375px) {
+    body {
+        width: 375px;
+        margin: 0;
+        overflow-y: auto;
+        height: 100vh;
+    }
+
+    .logo {
+        top: 24px;
+        left: -28px;
+    }
+
+    .caja {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        top: 144px;
+        bottom: 0;
+        right: 0;
+        left: 0px;
+        padding: 0px;
+    }
+
+    .caja-texto {
+        padding: 0 16px;
+        box-sizing: border-box;
+        height: 380px;
+    }
+
+    .warning {
+        display: block;
+        top:400px;
+        padding: 0 16px;
+        box-sizing: border-box;
+
+    }
+
+    .boton-encriptar {
+        top: 435px !important;
+        left: 16px;
+        width: calc(100% - 32px);
+    }
+
+    .boton-desencriptar {
+        position: relative;
+        left: 16px;
+        top: 144px !important;
+        margin-bottom: 10px;
+        width: calc(100% - 32px);
+    }
+
+    .mensaje {
+        display: block;
+        position: relative;
+        width: calc(100% - 32px);
+        min-height: 186px;
+        top: 343px;
+        left: 16px;
+        padding: 0px;
+    }
+
+    .contenido-mensaje {
+        width: 100%;
+        padding: 32px 128px 64px;
+    }
+
+    .persona {
+        display: none;
+    }
+
+    .resultado {
+        position: relative;
+        width: calc(100% - 64px);
+        left: 0;
+        top: 0;
+        right: 0;
+        padding: 32px;
+        transform: none;
+    }
+
+    .boton-copiar {
+        position: relative;
+        bottom: 32px;
+        width: calc(100% - 64px);
+        margin-top: 32px;
+        /* Para centrar el texto */
+        left: 32px;
+        transform: none;
+    }
+
+    footer {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        top: 100%;
+        left: 0;
+        transform: translateY(-100%);
+    }
+}

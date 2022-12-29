@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encriptador de texto</title>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/tooltip.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="imagenes/Logo.png" alt="Logo de alura">
+        </header>
+
+        <main>
+            <section class="caja">
+                <textarea id="caja-texto" class="caja-texto" placeholder="Ingrese el texto aquí"></textarea>
+                <span class="warning"><img src="imagenes/bi_exclamation-circle-fill.png" alt="ícono de exclamación en un círculo"> Solo letras minúsculas y sin acentos</span>
+                <button id="boton-encriptar" class="boton-encriptar">Encriptar</button>
+                <button id="boton-desencriptar" class="boton-desencriptar">Desencriptar</button>
+            </section>
+
+            <section class="mensaje">
+                <div id="resultado" class="resultado">
+
+                </div>
+                <div id="contenido-mensaje" class="contenido-mensaje">
+                    <img class="persona" src="imagenes/Muñeco.png" alt="Persona viendo un diamante">
+                    <p>Ningún mensaje fue encontrado</p>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div class="tooltip">
+                    <button id="boton-copiar" class="boton-copiar"><span class="tooltiptext" id="myTooltip">Copiar al portapapeles</span>Copiar</button>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            Desarrollado por: <span>Juan Pablo Palaceto Céspedes</span><a href="https://www.linkedin.com/in/juan-palaceto/" target="_blank"><img src="imagenes/linkedin-logo-300x300.png" alt="Logo de linkedin"></a><a href="https://github.com/JuanPalaceto" target="_blank"><img src="imagenes/670020.png" alt="Logo de github"></a>
+        </footer>
+
+        <script src="js/script.js"></script>
+        <script src="js/tooltip.js"></script>
+    </body>
+</html>
